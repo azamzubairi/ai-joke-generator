@@ -1,6 +1,6 @@
 # AI Joke Generator
 
-A modern web application that generates customized jokes using OpenAI's GPT-3.5 model. Built with Next.js, TypeScript, and Tailwind CSS.
+A modern web application that generates customized jokes using OpenAI's GPT-4o-mini model. Built with Next.js, TypeScript, and Tailwind CSS.
 
 ![AI Joke Generator](https://images.unsplash.com/photo-1527224857830-43a7acc85260?auto=format&fit=crop&q=80&w=2071)
 
