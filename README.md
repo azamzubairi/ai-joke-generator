@@ -13,7 +13,7 @@ A modern web application that generates customized jokes using OpenAI's GPT-4o-m
   - Adjust creativity level with temperature control
 
 - 🤖 **AI-Powered Generation**
-  - Uses OpenAI's GPT-3.5-turbo model
+  - Uses OpenAI's GPT-4o-mini model
   - Smart prompt engineering for better results
   - Automatic joke evaluation system
 
