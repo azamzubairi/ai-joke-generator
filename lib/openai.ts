@@ -3,7 +3,7 @@ import OpenAI from "openai";
 // Create an OpenAI API client (that's edge friendly!)
 const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true
+  dangerouslyAllowBrowser: true,
 });
 
 export async function generateJokeWithAI(parameters: {
@@ -21,10 +21,11 @@ export async function generateJokeWithAI(parameters: {
     temperature: parameters.temperature,
   });
 
-  const joke = completion.choices[0]?.message?.content || "Could not generate joke";
+  const joke =
+    completion.choices[0]?.message?.content || "Could not generate joke";
 
   // Evaluate the joke
-  const evaluationPrompt = `Evaluate the following joke and provide ratings from 0 to 100 for how funny, appropriate, and potentially offensive it is. Respond in JSON format only.
+  const evaluationPrompt = `Evaluate the following joke and provide ratings from 0 to 100 for how funny, appropriate, and offensive it is. Respond in JSON format only.
 
   Joke: "${joke}"`;
 
@@ -35,7 +36,9 @@ export async function generateJokeWithAI(parameters: {
     response_format: { type: "json_object" },
   });
 
-  const evaluationResult = JSON.parse(evaluation.choices[0]?.message?.content || "{}");
+  const evaluationResult = JSON.parse(
+    evaluation.choices[0]?.message?.content || "{}",
+  );
 
   return {
     joke,

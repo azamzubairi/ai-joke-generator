@@ -24,24 +24,26 @@ export function JokeHistory({ jokes }) {
       <ScrollArea className="h-[500px] pr-4">
         <div className="space-y-6">
           {jokes.map((joke, index) => (
-            <div
-              key={index}
-              className="p-4 border rounded-lg bg-card"
-            >
+            <div key={index} className="p-4 border rounded-lg bg-card">
               <p className="text-lg mb-4">{joke.joke}</p>
-              
+
               <div className="space-y-2">
                 <div className="flex items-center justify-between text-sm">
                   <span>Funny</span>
                   <span>{Math.round(joke.evaluation.funny)}%</span>
                 </div>
                 <Progress value={joke.evaluation.funny} />
-                
+
                 <div className="flex items-center justify-between text-sm">
                   <span>Appropriate</span>
                   <span>{Math.round(joke.evaluation.appropriate)}%</span>
                 </div>
                 <Progress value={joke.evaluation.appropriate} />
+                <div className="flex items-center justify-between text-sm">
+                  <span>Offensive</span>
+                  <span>{Math.round(joke.evaluation.offensive)}%</span>
+                </div>
+                <Progress value={joke.evaluation.offensive} />
               </div>
 
               <div className="mt-4 flex flex-wrap gap-2">
